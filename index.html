@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FutureTech - Explore the Future of Technology</title>
+  <style>
+    :root {
+      /* Colors */
+      --absolute-white: #ffffff;
+      --absolute-black: #000000;
+      --yellow-55: #ffd11a;
+      --yellow-60: #ffd633;
+      --dark-08: #141414;
+      --dark-10: #1a1a1a;
+      --dark-15: #262626;
+      --dark-20: #333333;
+      --dark-40: #666666;
+      --grey-50: #7e7e81;
+      --grey-60: #98989a;
+      --grey-70: #b3b3b3;
+      --grey-95: #f1f1f3;
+      --grey-99: #fcfcfd;
+      
+      /* Spacing */
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-xxl: 4rem;
+      
+      /* Font Sizes */
+      --text-xs: 0.75rem;
+      --text-sm: 0.875rem;
+      --text-base: 1rem;
+      --text-md: 1.125rem;
+      --text-lg: 1.25rem;
+      --text-xl: 1.5rem;
+      --text-2xl: 1.875rem;
+      --text-3xl: 2.25rem;
+      --text-4xl: 3rem;
+      --text-5xl: 3.75rem;
+      --text-6xl: 4.5rem;
+      
+      /* Border Radius */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-xl: 16px;
+      --radius-full: 9999px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background: var(--dark-08);
+      color: var(--absolute-white);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Kumbh Sans', 'Inter', sans-serif;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    h1 {
+      font-size: var(--text-4xl);
+    }
+    
+    h2 {
+      font-size: var(--text-3xl);
+    }
+    
+    h3 {
+      font-size: var(--text-2xl);
+    }
+    
+    h4 {
+      font-size: var(--text-xl);
+    }
+    
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--grey-60);
+    }
+    
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-md);
+    }
+    
+    .section {
+      padding: var(--spacing-xxl) 0;
+      border-bottom: 1px solid var(--dark-15);
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto var(--spacing-xxl);
+    }
+    
+    .section-tag {
+      display: inline-block;
+      background: var(--dark-20);
+      color: var(--absolute-white);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: var(--text-base);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+    
+    .btn-primary {
+      background: var(--yellow-55);
+      color: var(--dark-08);
+    }
+    
+    .btn-primary:hover {
+      background: var(--yellow-60);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--grey-60);
+      border-color: var(--dark-15);
+    }
+    
+    .btn-outline:hover {
+      background: var(--dark-10);
+      color: var(--absolute-white);
+    }
+    
+    .card {
+      background: var(--dark-10);
+      border: 1px solid var(--dark-15);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-lg);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .icon-container {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-15);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .icon-container img {
+      max-width: 60%;
+    }
+    
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark-10);
+      border-bottom: 1px solid var(--dark-15);
+    }
+    
+    .top-banner {
+      background: var(--dark-08);
+      border-bottom: 1px solid var(--dark-15);
+      padding: 0.75rem;
+      text-align: center;
+      font-size: var(--text-sm);
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .logo h1 {
+      font-size: var(--text-xl);
+      margin: 0;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: var(--spacing-lg);
+    }
+    
+    .nav-links a {
+      color: var(--grey-50);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--absolute-white);
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero h1 {
+      font-size: var(--text-5xl);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .hero p {
+      font-size: var(--text-xl);
+      max-width: 600px;
+      margin: 0 auto var(--spacing-xl);
+      color: var(--grey-70);
+    }
+    
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-xl);
+      flex-wrap: wrap;
+    }
+    
+    .stat-item {
+      text-align: center;
+    }
+    
+    .stat-value {
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      color: var(--yellow-55);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .stat-label {
+      color: var(--grey-60);
+    }
+    
+    /* Features Section */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+    }
+    
+    /* Resources Section */
+    .resources-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-xl);
+    }
+    
+    .resource-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .resource-meta {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--dark-15);
+    }
+    
+    .downloaders {
+      display: flex;
+      align-items: center;
+    }
+    
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--dark-40);
+      margin-right: -10px;
+    }
+    
+    /* Blog Section */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      justify-content: center;
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .tab {
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--dark-15);
+      border-radius: var(--radius-md);
+      background: var(--dark-10);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .tab.active, .tab:hover {
+      background: var(--dark-15);
+      border-color: var(--yellow-55);
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    
+    .blog-card {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-image {
+      height: 200px;
+      width: 100%;
+      border-radius: var(--radius-lg);
+      object-fit: cover;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .blog-stats {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: auto;
+    }
+    
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--grey-60);
+    }
+    
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--spacing-lg);
+    }
+    
+    .testimonial-card {
+      position: relative;
+    }
+    
+    .testimonial-content {
+      position: relative;
+      background: var(--dark-10);
+      border: 1px solid var(--dark-15);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-lg);
+      margin-top: 1.5rem;
+    }
+    
+    .quote-icon {
+      position: absolute;
+      top: -1.5rem;
+      left: var(--spacing-lg);
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    /* CTA Section */
+    .cta {
+      text-align: center;
+      background: var(--dark-10);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-xxl);
+      margin: var(--spacing-xxl) 0;
+    }
+    
+    .cta h2 {
+      font-size: var(--text-3xl);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--dark-10);
+      border-top: 1px solid var(--dark-15);
+      padding: var(--spacing-xxl) 0 0;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-xl);
+      margin-bottom: var(--spacing-xxl);
+    }
+    
+    .footer-column h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--spacing-md);
+      color: var(--absolute-white);
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: var(--grey-60);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--absolute-white);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid var(--dark-15);
+      padding: var(--spacing-lg) 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+    
+    .footer-links-horizontal {
+      display: flex;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: var(--text-4xl);
+      }
+      
+      .hero p {
+        font-size: var(--text-lg);
+      }
+      
+      h1 {
+        font-size: var(--text-3xl);
+      }
+      
+      h2 {
+        font-size: var(--text-2xl);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+      }
+      
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .hero {
+        padding: 4rem 0;
+      }
+      
+      .hero h1 {
+        font-size: var(--text-3xl);
+      }
+      
+      .section {
+        padding: var(--spacing-xl) 0;
+      }
+      
+      .stats {
+        gap: var(--spacing-lg);
+      }
+      
+      .cta {
+        padding: var(--spacing-xl);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-xxl: 3rem;
+      }
+      
+      .hero {
+        padding: 3rem 0;
+      }
+      
+      .hero h1 {
+        font-size: var(--text-2xl);
+      }
+      
+      .hero p {
+        font-size: var(--text-base);
+      }
+      
+      .stat-value {
+        font-size: var(--text-2xl);
+      }
+      
+      .section-header {
+        margin-bottom: var(--spacing-xl);
+      }
+      
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: var(--text-sm);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="top-banner">
+      Subscribe to our Newsletter For New & latest Blogs and Resources
+    </div>
+    <nav class="navbar container">
+      <div class="logo">
+        <h1>FutureTech</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">News</a>
+        <a href="#">Podcasts</a>
+        <a href="#">Resources</a>
+      </div>
+      <a href="#" class="btn btn-primary">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="section-tag">Your Journey to Tomorrow Begins Here</div>
+        <h1>Explore the Frontiers of Artificial Intelligence</h1>
+        <p>Welcome to the epicenter of AI innovation. FutureTech AI News is your passport to a world where machines think, learn, and reshape the future.</p>
+        <a href="#" class="btn btn-primary">Explore Resources</a>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value">300+</div>
+            <div class="stat-label">Resources available</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">12k+</div>
+            <div class="stat-label">Total Downloads</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">10k+</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Unlock the Power of</div>
+        <h2>FutureTech Features</h2>
+      </div>
+      
+      <div class="features-grid">
+        <div class="card">
+          <div class="icon-container">
+            <img src="images/18.png" alt="Blog Icon">
+          </div>
+          <h3>Future Technology Blog</h3>
+          <p>Stay informed with our blog section dedicated to future technology.</p>
+          
+          <div class="features-grid" style="margin-top: 1.5rem; grid-template-columns: repeat(2, 1fr);">
+            <div class="feature">
+              <h4>Quantity</h4>
+              <p>Over 1,000 articles on emerging tech trends and breakthroughs.</p>
+            </div>
+            <div class="feature">
+              <h4>Variety</h4>
+              <p>Articles cover fields like AI, robotics, biotechnology, and more.</p>
+            </div>
+            <div class="feature">
+              <h4>Frequency</h4>
+              <p>Fresh content added daily to keep you up to date.</p>
+            </div>
+            <div class="feature">
+              <h4>Authoritative</h4>
+              <p>Written by our team of tech experts and industry professionals.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="icon-container">
+            <img src="images/19.png" alt="Research Icon">
+          </div>
+          <h3>Research Insights Blogs</h3>
+          <p>Dive deep into future technology concepts with our research section.</p>
+          
+          <div class="features-grid" style="margin-top: 1.5rem; grid-template-columns: repeat(2, 1fr);">
+            <div class="feature">
+              <h4>Depth</h4>
+              <p>500+ research articles for in-depth understanding.</p>
+            </div>
+            <div class="feature">
+              <h4>Graphics</h4>
+              <p>Visual aids and infographics to enhance comprehension.</p>
+            </div>
+            <div class="feature">
+              <h4>Trends</h4>
+              <p>Explore emerging trends in future technology research.</p>
+            </div>
+            <div class="feature">
+              <h4>Contributors</h4>
+              <p>Contributions from tech researchers and academics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Your Gateway to In-Depth Information</div>
+        <h2>Unlock Valuable Knowledge with FutureTech's Resources</h2>
+      </div>
+      
+      <div class="resources-container">
+        <div class="card resource-card">
+          <div class="icon-container">
+            <img src="images/4.png" alt="Ebooks Icon">
+          </div>
+          <h3>Ebooks</h3>
+          <p>Explore our collection of ebooks covering a wide spectrum of future technology topics.</p>
+          
+          <div class="resource-meta">
+            <div>
+              <div style="font-size: var(--text-sm); color: var(--grey-60);">Downloaded By</div>
+              <div style="font-weight: 600;">10k+ Users</div>
+            </div>
+            <a href="#" class="btn btn-outline">Download Ebooks Now</a>
+          </div>
+        </div>
+        
+        <div class="card resource-card">
+          <div class="icon-container">
+            <img src="images/6.png" alt="Whitepapers Icon">
+          </div>
+          <h3>Whitepapers</h3>
+          <p>Dive into comprehensive reports and analyses with our collection of whitepapers.</p>
+          
+          <div class="resource-meta">
+            <div>
+              <div style="font-size: var(--text-sm); color: var(--grey-60);">Downloaded By</div>
+              <div style="font-weight: 600;">10k+ Users</div>
+            </div>
+            <a href="#" class="btn btn-outline">Download Whitepapers Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">A Knowledge Treasure Trove</div>
+        <h2>Explore FutureTech's In-Depth Blog Posts</h2>
+      </div>
+      
+      <div class="tabs">
+        <div class="tab active">All</div>
+        <div class="tab">Quantum Computing</div>
+        <div class="tab">AI Ethics</div>
+        <div class="tab">Space Exploration</div>
+        <div class="tab">Biotechnology</div>
+        <div class="tab">Renewable Energy</div>
+      </div>
+      
+      <div class="blog-grid">
+        <div class="card blog-card">
+          <img src="images/Image (4).png" alt="Quantum Computing" class="blog-image">
+          <div class="blog-author">
+            <img src="images/Image (4).png" alt="John Techson" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">John Techson</div>
+              <div style="color: var(--grey-60);">Quantum Computing</div>
+            </div>
+          </div>
+          <div style="color: var(--grey-60); margin-bottom: var(--spacing-sm);">October 15, 2023</div>
+          <h3>The Quantum Leap in Computing</h3>
+          <p>Explore the revolution in quantum computing, its applications, and its potential impact on various industries.</p>
+          
+          <div class="blog-stats">
+            <div class="stat">
+              <img src="images/icon.png" alt="Views icon" width="20">
+              <span>24.5k</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (1).png" alt="Comments icon" width="20">
+              <span>50</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (2).png" alt="Shares icon" width="20">
+              <span>20</span>
+            </div>
+          </div>
+          
+          <a href="#" class="btn btn-outline" style="margin-top: var(--spacing-md);">View Blog</a>
+        </div>
+        
+        <div class="card blog-card">
+          <img src="images/Image (2).png" alt="AI Ethics" class="blog-image">
+          <div class="blog-author">
+            <img src="images/Image (2).png" alt="Sarah Ethicist" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Sarah Ethicist</div>
+              <div style="color: var(--grey-60);">AI Ethics</div>
+            </div>
+          </div>
+          <div style="color: var(--grey-60); margin-bottom: var(--spacing-sm);">November 5, 2023</div>
+          <h3>The Ethical Dilemmas of AI</h3>
+          <p>A deep dive into ethical challenges posed by AI, including bias, privacy, and transparency.</p>
+          
+          <div class="blog-stats">
+            <div class="stat">
+              <img src="images/icon (6).png" alt="Views icon" width="20">
+              <span>32k</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (1).png" alt="Comments icon" width="20">
+              <span>72</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (2).png" alt="Shares icon" width="20">
+              <span>18</span>
+            </div>
+          </div>
+          
+          <a href="#" class="btn btn-outline" style="margin-top: var(--spacing-md);">View Blog</a>
+        </div>
+        
+        <div class="card blog-card">
+          <img src="images/Image (5).png" alt="Space Exploration" class="blog-image">
+          <div class="blog-author">
+            <img src="images/Image (5).png" alt="Astronomer X" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Astronomer X</div>
+              <div style="color: var(--grey-60);">Space Exploration</div>
+            </div>
+          </div>
+          <div style="color: var(--grey-60); margin-bottom: var(--spacing-sm);">December 10, 2023</div>
+          <h3>The Mars Colonization Challenge</h3>
+          <p>Exploring the technical and logistical challenges of human colonization on Mars.</p>
+          
+          <div class="blog-stats">
+            <div class="stat">
+              <img src="images/icon (6).png" alt="Views icon" width="20">
+              <span>20k</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (1).png" alt="Comments icon" width="20">
+              <span>31</span>
+            </div>
+            <div class="stat">
+              <img src="images/icon (2).png" alt="Shares icon" width="20">
+              <span>12</span>
+            </div>
+          </div>
+          
+          <a href="#" class="btn btn-outline" style="margin-top: var(--spacing-md);">View Blog</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">What Our Readers Say</div>
+        <h2>Real Words from Real Readers</h2>
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/10.png" alt="Sarah Thompson" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Sarah Thompson</div>
+              <div style="color: var(--grey-60);">San Francisco, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/Image (9).png" alt="Raj Patel" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Raj Patel</div>
+              <div style="color: var(--grey-60);">Mumbai, India</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/Image (4).png" alt="Emily Adams" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Emily Adams</div>
+              <div style="color: var(--grey-60);">London, UK</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/9.png" alt="Alan Jackson" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Alan Jackson</div>
+              <div style="color: var(--grey-60);">Houston, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/Image (2).png" alt="Jessica Miller" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Jessica Miller</div>
+              <div style="color: var(--grey-60);">Boston, USA</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics.</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-author">
+            <img src="images/7.png" alt="Diego Lopez" class="author-avatar">
+            <div>
+              <div style="font-weight: 600;">Diego Lopez</div>
+              <div style="color: var(--grey-60);">Barcelona, Spain</div>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <img src="images/12.png" alt="Quote icon" class="quote-icon" width="30">
+            <p>The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>Be Part of the Future Tech Revolution</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--spacing-lg);">Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry.</p>
+        <a href="#" class="btn btn-primary">Join Our Community</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Home</h3>
+          <div class="footer-links">
+            <a href="#">Features</a>
+            <a href="#">Blogs</a>
+            <a href="#">Resources</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Newsletter</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>News</h3>
+          <div class="footer-links">
+            <a href="#">Trending Stories</a>
+            <a href="#">Featured Videos</a>
+            <a href="#">Technology</a>
+            <a href="#">Health</a>
+            <a href="#">Politics</a>
+            <a href="#">Environment</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Blogs</h3>
+          <div class="footer-links">
+            <a href="#">Quantum Computing</a>
+            <a href="#">AI Ethics</a>
+            <a href="#">Space Exploration</a>
+            <a href="#">Biotechnology</a>
+            <a href="#">Renewable Energy</a>
+            <a href="#">Biohacking</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Podcasts</h3>
+          <div class="footer-links">
+            <a href="#">AI Revolution</a>
+            <a href="#">TechTalk AI</a>
+            <a href="#">AI Conversations</a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Resources</h3>
+          <div class="footer-links">
+            <a href="#">Whitepapers</a>
+            <a href="#">Ebooks</a>
+            <a href="#">Reports</a>
+            <a href="#">Research Papers</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-links-horizontal">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div style="color: var(--grey-60);">© 2024 FutureTech. All rights reserved.</div>
+        <div class="social-links">
+          <a href="#"><img src="images/14.png" alt="Facebook" width="24"></a>
+          <a href="#"><img src="images/15.png" alt="Twitter" width="24"></a>
+          <a href="#"><img src="images/16.png" alt="Instagram" width="24"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple tab functionality
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
